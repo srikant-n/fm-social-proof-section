@@ -4,7 +4,7 @@ Created using HTML andd CSS (Grid).
 Challenge [readme](./readme-challenge.md/) and [design images](./design/) are available
 There is also a `style-guide.md` file, which contains the information needed for the challenge, such as color palette and fonts.
 
-[View result site](https://srikant-n.github.io/fm-social-proof-section/index.html)
+[View result site](https://srikant-n.github.io/fm-social-proof-section/)
 
 [Challenge info on Frontend Mentor](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA)
 

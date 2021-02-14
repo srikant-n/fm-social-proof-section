@@ -3,10 +3,12 @@
     padding: 0;
     min-height: 100vh;
 }
+
 main {
     position: relative;
-    
+    min-height: 96vh;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -84,6 +86,7 @@ h1 {
     grid-area: reviews;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     margin: 20px 0;
 }
@@ -177,7 +180,6 @@ footer a {
 @media (min-width: 1200px) {
     #site-holder {
         padding: 50px 40px;
-        grid-template-rows: auto 70%;
     }
 
     #info {
@@ -199,7 +201,7 @@ footer a {
 
     #reviews {
         flex-direction: row;
-        /* min-height: 80%; */
+        height:95%;
         margin-top: 60px;
         gap: 30px;
     }
@@ -214,5 +216,10 @@ footer a {
 
     .rating-holder:nth-child(3), .review-holder:nth-child(3) {
         align-self: flex-end;
+    }
+
+    footer {
+        bottom: -4vh;
+        height: 2em;
     }
 }
