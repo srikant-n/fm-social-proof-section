@@ -1,17 +1,22 @@
-
+:root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
 body {
-    font-family: 'Spartan', sans-serif;
     background-color: white;
     background: url("../images/bg-pattern-top-mobile.svg") no-repeat top right, url("../images/bg-pattern-bottom-mobile.svg") no-repeat bottom right;
-    /* background: url("../images/bg-pattern-bottom-mobile.svg") no-repeat bottom right; */
+    background-clip: border-box;
+    font-family: 'Spartan', sans-serif;
     color: hsl(303, 10%, 53%);
     display: grid;
     grid-template-areas: 
     "info"
     "ratings"
-    "reviews";
+    "reviews"
+    "footer";
     gap: 30px;
-    padding: 50px 20px;
+    padding: 50px 20px 0 20px;
 }
 
 #info {
@@ -35,12 +40,13 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
 .rating-holder {
     background-color: hsl(300, 24%, 96%);
-    border-radius: 10px;
+    border-radius: 8px;
     width: 100%;
     padding: 15px 0 5px 0;
     display: flex;
@@ -70,7 +76,7 @@ h1 {
 
 .review-holder {
     background-color: hsl(300, 43%, 22%);
-    border-radius: 10px;
+    border-radius: 8px;
     display: grid;
     grid-template-columns: 100px auto auto;
     grid-template-areas:
@@ -109,12 +115,85 @@ h1 {
 }
 
 footer {
+    grid-area: footer;
     font-size: 11px;
     text-align: center;
-    position: relative;
-    bottom: -200%;
+    width: 90vw;
 }
 
 footer a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 721px) {
+    body {
+        background: url("../images/bg-pattern-top-desktop.svg") no-repeat top left, url("../images/bg-pattern-bottom-desktop.svg") no-repeat bottom right;
+        grid-template-columns: 50% auto;
+        grid-template-areas: 
+        "info ratings"
+        "reviews reviews"
+        "footer footer";
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    #info {
+        text-align: left;
+    }
+
+    #info p {
+        text-align: left;
+    }
+
+    #ratings {
+        align-items: flex-end;
+    }
+
+    .rating-holder {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding: 50px 40px 0 40px;
+    }
+
+    #info {
+        max-width: 500px;
+    }
+
+    .rating-holder {
+        width: 80%;
+        max-width: 500px;
+        flex-direction: row;
+        padding: 5px 20px;
+        gap: 30px;
+    }
+
+    .rating {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    #reviews {
+        flex-direction: row;
+        min-height: 80%;
+        margin-top: 60px;
+        gap: 30px;
+    }
+
+    .rating-holder:nth-child(1), .review-holder:nth-child(1) {
+        align-self: flex-start;
+    }
+
+    .rating-holder:nth-child(2), .review-holder:nth-child(2) {
+        align-self: center;
+    }
+
+    .rating-holder:nth-child(3), .review-holder:nth-child(3) {
+        align-self: flex-end;
+    }
 }
